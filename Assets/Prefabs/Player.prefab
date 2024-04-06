@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2495417805220740215}
   - component: {fileID: 2495417805220740214}
   - component: {fileID: 2495417805220740213}
+  - component: {fileID: -7277146366540359790}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -173,3 +174,19 @@ MonoBehaviour:
     m_Bits: 8
   jumpCode: 32
   isGrounded: 0
+--- !u!114 &-7277146366540359790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495417805220740212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4fc151bb55a5949bd9af1a6b96bd36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kickPowerMin: 150
+  kickPowerMax: 750
+  timeToChargeKick: 1
+  attackRange: 1

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public Transform groundCheck;
-
-    public float speed;
-    public float gravity;
-    public float jumpHeigh;
-
-    public float groundDistance;
-    public LayerMask groundMask;
-    public KeyCode jumpCode;
-
-    Vector3 velocity;
-    public bool isGrounded;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private Transform groundCheck;
+    [Space(10)]
+    [SerializeField] private float speed;
+    [SerializeField] private float gravity;
+    [SerializeField] private float jumpHeigh;
+    [Space(10)]
+    [SerializeField] private float groundDistance;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private KeyCode jumpCode;
+    [Space(10)]
+    private Vector3 velocity;
+    [SerializeField] private bool isGrounded;
 
     private void Update()
     {
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         if(directionX != 0 || directionZ != 0) 
         {
             Vector3 move = Vector3.right * directionX + Vector3.forward * directionZ;
-            controller.Move(move * speed * Time.deltaTime);
+            controller.Move(speed * Time.deltaTime * move);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), Time.deltaTime * 15f);
         }
         
