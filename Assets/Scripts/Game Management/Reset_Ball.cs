@@ -11,6 +11,7 @@ public class Reset_Ball : MonoBehaviour
 
     private void Start()
     {
+        ball = GameManager.GetInstance().Ball;
         ballPosition = ball.transform.position;
     }
 

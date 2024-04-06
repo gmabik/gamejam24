@@ -49,8 +49,7 @@ public class AiScript : MonoBehaviour
         {
             Vector3 randomDirection = Random.insideUnitSphere * 5f; // Change 5f to the desired distance to move away
             randomDirection += transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
+            NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas);
             agent.SetDestination(hit.position);
         }
 
@@ -64,8 +63,7 @@ public class AiScript : MonoBehaviour
         Vector3 directionToTarget = (EnemyGoal.transform.position - transform.position).normalized;
 
         // Check if the path to the attack target intersects with any other bots
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, directionToTarget, out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, directionToTarget, out RaycastHit hit, Mathf.Infinity))
         {
             AiScript hitBot = hit.collider.gameObject.GetComponent<AiScript>();
             if (hitBot != null && hitBot != this)
