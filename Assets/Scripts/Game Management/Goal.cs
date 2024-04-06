@@ -16,8 +16,8 @@ public class Goal : MonoBehaviour
     {
         if (other.gameObject.tag == "Ball")
         {
-            if (team == Team.Team1) ScoreManager.instance.score2++;
-            else ScoreManager.Instance.score1++;
+            if (team == Team.Team1) ScoreManager.GetInstance().team2Score++;
+            else ScoreManager.GetInstance().team1Score++;
         }
     }
 }
