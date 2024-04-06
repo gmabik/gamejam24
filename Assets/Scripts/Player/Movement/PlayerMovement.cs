@@ -29,10 +29,15 @@ public class PlayerMovement : MonoBehaviour
         float directionX = -Input.GetAxis("Vertical");
         float directionZ = Input.GetAxis("Horizontal");
 
-        Vector3 move = Vector3.right * directionX + Vector3.forward * directionZ;
-        controller.Move(move * speed * Time.deltaTime);
+        if(directionX != 0 || directionZ != 0) 
+        {
+            Vector3 move = Vector3.right * directionX + Vector3.forward * directionZ;
+            controller.Move(move * speed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), Time.deltaTime * 15f);
+        }
+        
 
-        if (Input.GetKeyDown(jumpCode) && isGrounded)
+        if (Input.GetKey(jumpCode) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
         }
