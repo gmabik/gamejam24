@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Time : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     public float timeRemaining = 24;
     public bool timerIsRunning = false;
