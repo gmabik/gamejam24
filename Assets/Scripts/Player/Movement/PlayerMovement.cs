@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [Space(10)]
     private Vector3 velocity;
     [SerializeField] private bool isGrounded;
+    [Space(10)]
+    [SerializeField] private Animator animator;
 
     private void Update()
     {
@@ -33,11 +35,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(directionX != 0 || directionZ != 0) 
         {
+            animator.SetBool("isRunning", true);
             Vector3 move = Vector3.right * directionX + Vector3.forward * directionZ;
             controller.Move(speed * Time.deltaTime * move);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), Time.deltaTime * 15f);
         }
-        
+        else animator.SetBool("isRunning", false);
+
 
         if (Input.GetKey(jumpCode) && isGrounded)
         {

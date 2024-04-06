@@ -43,15 +43,25 @@ public class AiScript : MonoBehaviour
         if(Vector3.Distance(Ball.transform.position, EnemyGoal.transform.position) < Vector3.Distance(transform.position, EnemyGoal.transform.position)) canAttack = true;
         else canAttack = false;
 
-        if (distanceBallToPlayer <= distanceToBallToAttack && canAttack) Attack();
+        if (distanceBallToPlayer <= distanceToBallToAttack && canAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Kick();
+
+        else if (Ball.GetComponent<BallScript>().isBeingKicked)
+        {
+            Vector3 randomDirection = Random.insideUnitSphere * 5f; // Change 5f to the desired distance to move away
+            randomDirection += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(randomDirection, out hit, 5f, NavMesh.AllAreas);
+            agent.SetDestination(hit.position);
+        }
 
         else if (distanceBallToAllyGoal > distanceFromGoalToFollow) FollowBall();
 
         else Defend();
     }
 
-    private void Attack()
+    private void Kick()
     {
+        Ball.GetComponent<BallScript>().isBeingKicked = true;
         Ball.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up) * Random.Range(kickPowerMin, kickPowerMax));
     }
 

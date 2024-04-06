@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject team1Goal;
     public GameObject team2Goal;
 
+    public GameObject mainPlayer;
+
     public bool ÑheckIfTheSameTeam(GameObject instigator, GameObject otherObject)
         => (team1Players.Contains(instigator) && team1Players.Contains(otherObject)) || (team2Players.Contains(instigator) && team2Players.Contains(otherObject));
 
