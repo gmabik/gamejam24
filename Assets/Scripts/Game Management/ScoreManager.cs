@@ -13,19 +13,11 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
-    public int team1Score;
-    public int team2Score;
+    public int team1Score = 0;
+    public int team2Score = 0;
 
-    [SerializeField]
-    private Text _scoreText1;
-    private Text _scoreText2;
-
-
-    private void Start()
-    {
-        _scoreText1.text = 0.ToString();
-        _scoreText2.text = 0.ToString();
-    }
+    [SerializeField] private Text _scoreText1;
+    [SerializeField] private Text _scoreText2;
 
     public void Update()
     {

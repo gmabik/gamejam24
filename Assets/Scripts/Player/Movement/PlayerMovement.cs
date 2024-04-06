@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameManager.Team team;
+    [Space(20)]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform groundCheck;
     [Space(10)]

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    public Team team;
-
-    public enum Team
-    {
-        Team1,
-        Team2
-    }
+    public GameManager.Team team;
     public int score;
+
+    private void Start()
+    {
+        if (team == GameManager.Team.Team1) GameManager.GetInstance().team1Goal = gameObject;
+        else GameManager.GetInstance().team2Goal = gameObject;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ball")
         {
-            if (team == Team.Team1) ScoreManager.GetInstance().team2Score++;
+            if (team == GameManager.Team.Team1) ScoreManager.GetInstance().team2Score++;
             else ScoreManager.GetInstance().team1Score++;
         }
     }
