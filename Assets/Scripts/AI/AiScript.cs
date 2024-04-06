@@ -43,7 +43,7 @@ public class AiScript : MonoBehaviour
         if(Vector3.Distance(Ball.transform.position, EnemyGoal.transform.position) < Vector3.Distance(transform.position, EnemyGoal.transform.position)) canAttack = true;
         else canAttack = false;
 
-        if (distanceBallToPlayer <= distanceToBallToAttack && canAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Kick();
+        if (distanceBallToPlayer <= distanceToBallToAttack && canAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Attack();
 
         else if (Ball.GetComponent<BallScript>().isBeingKicked)
         {
@@ -59,8 +59,23 @@ public class AiScript : MonoBehaviour
         else Defend();
     }
 
-    private void Kick()
+    private void Attack()
     {
+        Vector3 directionToTarget = (EnemyGoal.transform.position - transform.position).normalized;
+
+        // Check if the path to the attack target intersects with any other bots
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, directionToTarget, out hit, Mathf.Infinity))
+        {
+            AiScript hitBot = hit.collider.gameObject.GetComponent<AiScript>();
+            if (hitBot != null && hitBot != this)
+            {
+                // If the path intersects with another bot, adjust direction away from it
+                Vector3 newDirection = Vector3.Reflect(directionToTarget, hit.normal);
+                Ball.GetComponent<Rigidbody>().AddForce(newDirection * Random.Range(kickPowerMin, kickPowerMax));
+                return;
+            }
+        }
         Ball.GetComponent<BallScript>().isBeingKicked = true;
         Ball.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up) * Random.Range(kickPowerMin, kickPowerMax));
     }
