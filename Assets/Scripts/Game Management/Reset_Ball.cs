@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class Reset_Ball : MonoBehaviour
 {
-    public GameObject Ball;
+    private GameObject ball;
 
-    private Vector3 BallPosition;
+    private Vector3 ballPosition;
 
     private void Start()
     {
-        BallPosition = Ball.transform.position;
+        ballPosition = ball.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Ball)
+        if (other.gameObject == ball)
         {
-            Ball.transform.position = BallPosition;
+            ball.transform.position = ballPosition;
         }
     }
 }
