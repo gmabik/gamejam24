@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerKick : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerKick : MonoBehaviour
     [SerializeField] private float timeToChargeKick;
     [Space(10)]
     [SerializeField] private float attackRange;
+
+    [Space(10)] [SerializeField] private Slider slider;
+
 
     private bool isChargingKick;
     private float currentChargeTime;
@@ -22,8 +26,11 @@ public class PlayerKick : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isChargingKick = false;
+            currentChargeTime = 0f;
             Kick();
         }
+        
+        UpdateUI();
     }
 
     private void Kick()
@@ -44,5 +51,10 @@ public class PlayerKick : MonoBehaviour
         float power = Mathf.Lerp(kickPowerMin, kickPowerMax, currentChargeTime / timeToChargeKick);
         ball.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up) * power);
         currentChargeTime = 0f;
+    }
+
+    private void UpdateUI()
+    {
+        slider.value = currentChargeTime / timeToChargeKick;
     }
 }
