@@ -10,6 +10,8 @@ public class Goal : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clip;
 
+    public Transform actualPos;
+
     private void Start()
     {
         if (team == GameManager.Team.Team1) GameManager.GetInstance().team1Goal = gameObject;
@@ -24,6 +26,8 @@ public class Goal : MonoBehaviour
             else ScoreManager.GetInstance().team1Score++;
             
             audioSource.PlayOneShot(clip);
+
+            GameManager.GetInstance().Ball.GetComponent<BallScript>().ResetPos();
         }
     }
 }

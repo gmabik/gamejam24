@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        float directionX = -Input.GetAxis("Vertical");
-        float directionZ = Input.GetAxis("Horizontal");
+        float directionX = Input.GetAxis("Horizontal");
+        float directionZ = Input.GetAxis("Vertical");
 
         if(directionX != 0 || directionZ != 0) 
         {
