@@ -12,11 +12,12 @@ public class BallScript : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        StartCoroutine(ResetWhenStuck());
     }
 
     private void Update()
     {
-        if(isBeingKicked) StartCoroutine(ResetKickFlag());
+        if (isBeingKicked) StartCoroutine(ResetKickFlag());
     }
 
     private IEnumerator ResetKickFlag()
@@ -28,5 +29,15 @@ public class BallScript : MonoBehaviour
     public void ResetPos()
     {
         transform.position = startPos;
+    }
+
+    IEnumerator ResetWhenStuck()
+    {
+        while (true)
+        {
+            Vector3 pos = transform.position;
+            yield return new WaitForSeconds(2f);
+            if(Vector3.Distance(pos, transform.position) < 0.1f) ResetPos();
+        }
     }
 }
