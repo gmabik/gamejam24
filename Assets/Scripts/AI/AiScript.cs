@@ -48,8 +48,11 @@ public class AiScript : MonoBehaviour
         if(role == GameManager.BotRole.Defender)
         {
             Defend();
+            if (distanceBallToPlayer <= distanceToBallToAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Attack();
             return;
         }
+
+        FollowBall();
 
         if (distanceBallToPlayer <= distanceToBallToAttack && canAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Attack();
 
@@ -60,10 +63,6 @@ public class AiScript : MonoBehaviour
             NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas);
             agent.SetDestination(hit.position);
         }
-
-        else if (distanceBallToAllyGoal > distanceFromGoalToFollow) FollowBall();
-
-        else Defend();
     }
 
     private void Attack()
@@ -95,6 +94,7 @@ public class AiScript : MonoBehaviour
     private void Defend()
     {
         Vector3 position = Vector3.Lerp(Ball.transform.position, AllyGoal.transform.position, CoefToDefend);
+        position += new Vector3(Random.Range(-3f, 3f), 0f, Random.Range(-3f, 3f));
         agent.SetDestination(position);
     }
 }
