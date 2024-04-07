@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TMP_Text countText;
+    
     private static GameManager Instance;
     public static GameManager GetInstance() => Instance;
     private void Awake()
     {
         Instance = this;
+        StartCoroutine(Countdown(3));
     }
 
     public enum Team
@@ -35,7 +41,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainPlayer;
 
-    public bool ÑheckIfTheSameTeam(GameObject instigator, GameObject otherObject)
+    public bool heckIfTheSameTeam(GameObject instigator, GameObject otherObject)
         => (team1Players.Contains(instigator) && team1Players.Contains(otherObject)) || (team2Players.Contains(instigator) && team2Players.Contains(otherObject));
 
     public GameObject GetAllyGoal(GameObject instigator)
@@ -80,6 +86,23 @@ public class GameManager : MonoBehaviour
                 ai.role = BotRole.Defender;
             }
         }
+    }
+
+    IEnumerator Countdown(int seconds)
+    {
+        Time.timeScale = 0f;
+        int count = seconds;
+
+        while (count > 0)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            count--;
+            countText.text = count.ToString();
+        }
+        countText.text = "GO";
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
+        Destroy(countText.gameObject);
     }
 
     private void Update()
