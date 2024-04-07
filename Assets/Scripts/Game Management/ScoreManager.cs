@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,8 +17,8 @@ public class ScoreManager : MonoBehaviour
     public int team1Score = 0;
     public int team2Score = 0;
 
-    [SerializeField] private Text _scoreText1;
-    [SerializeField] private Text _scoreText2;
+    [SerializeField] private TMP_Text _scoreText1;
+    [SerializeField] private TMP_Text _scoreText2;
 
     public void Update()
     {
