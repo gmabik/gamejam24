@@ -10,6 +10,8 @@ public class AiScript : MonoBehaviour
 
     public GameManager.Team team;
 
+    public GameManager.BotRole role;
+
     [Header("Attack")]
     [SerializeField] private float distanceToBallToAttack;
     [SerializeField] private float kickPowerMin;
@@ -42,6 +44,12 @@ public class AiScript : MonoBehaviour
 
         if(Vector3.Distance(Ball.transform.position, EnemyGoal.transform.position) < Vector3.Distance(transform.position, EnemyGoal.transform.position)) canAttack = true;
         else canAttack = false;
+
+        if(role == GameManager.BotRole.Defender)
+        {
+            Defend();
+            return;
+        }
 
         if (distanceBallToPlayer <= distanceToBallToAttack && canAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Attack();
 
