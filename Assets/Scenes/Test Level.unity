@@ -642,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: ee7adfa1269202449b089cd28ec12d44, type: 3}
+  clip2: {fileID: 8300000, guid: c1d279f4073a06d4e84f5219c96685c9, type: 3}
   countText: {fileID: 329632516}
   <Ball>k__BackingField: {fileID: 482776404}
   team1Players: []
@@ -1485,20 +1486,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 329632515, guid: c33f73a45e811e044b745864bde3afb7, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 81.7189
-      objectReference: {fileID: 0}
-    - target: {fileID: 329632515, guid: c33f73a45e811e044b745864bde3afb7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 30.733814
-      objectReference: {fileID: 0}
-    - target: {fileID: 329632516, guid: c33f73a45e811e044b745864bde3afb7, type: 3}
-      propertyPath: m_text
-      value: '3
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 7060144986423391801, guid: c33f73a45e811e044b745864bde3afb7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

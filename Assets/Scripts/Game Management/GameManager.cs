@@ -11,6 +11,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public AudioClip clip;
+    public AudioClip clip2;
+
     
     public TMP_Text countText;
     
@@ -98,15 +100,18 @@ public class GameManager : MonoBehaviour
         AudioSource source = gameObject.GetComponent<AudioSource>();
         while (count > 0)
         {
+            source.PlayOneShot(clip);
+
             yield return new WaitForSecondsRealtime(1);
             count--;
-            source.PlayOneShot(clip);
             countText.text = count.ToString();
         }
         
         
         countText.text = "GO";
-        source.PlayOneShot(clip);
+        source.PlayOneShot(clip2);
+        AudioSource source2 = gameObject.GetComponent<AudioSource>();
+
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
         Destroy(countText.gameObject);
