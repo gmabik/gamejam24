@@ -8,6 +8,8 @@ public class AiScript : MonoBehaviour
 {
     private NavMeshAgent agent;
 
+    [SerializeField] private Animator animator;
+
     public GameManager.Team team;
 
     public GameManager.BotRole role;
@@ -45,11 +47,19 @@ public class AiScript : MonoBehaviour
         if(Vector3.Distance(Ball.transform.position, EnemyGoal.transform.position) < Vector3.Distance(transform.position, EnemyGoal.transform.position)) canAttack = true; // checks if bot should kick the ball
         else canAttack = false;
 
-        if(role == GameManager.BotRole.Defender) //sets behaviour pattern for defenders
+        if (role == GameManager.BotRole.Defender) //sets behaviour pattern for defenders
         {
             Defend();
+            if (Vector3.Distance(agent.destination, transform.position) < 5f) { animator.SetBool("isRunning", false); animator.SetBool("isDefending", true); }
+            else { animator.SetBool("isRunning", true); animator.SetBool("isDefending", false); }
             if (distanceBallToPlayer <= distanceToBallToAttack && !Ball.GetComponent<BallScript>().isBeingKicked) Attack();
             return;
+        }
+        else
+        {
+            if (agent.isStopped) animator.SetBool("isRunning", false);
+            else animator.SetBool("isRunning", true);
+            animator.SetBool("isDefending", false);
         }
         //here behaviour for attackers
         FollowBall();
@@ -67,6 +77,8 @@ public class AiScript : MonoBehaviour
 
     private void Attack()
     {
+        animator.SetTrigger("Kick");
+
         Vector3 directionToTarget = (EnemyGoal.transform.position - transform.position).normalized;
 
         // Check if the path to the attack target intersects with any other bots

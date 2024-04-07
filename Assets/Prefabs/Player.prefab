@@ -355,7 +355,7 @@ MonoBehaviour:
     m_Bits: 8
   jumpCode: 32
   isGrounded: 0
-  animator: {fileID: 0}
+  animator: {fileID: 1132692564}
 --- !u!114 &-7277146366540359790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   kickPowerMin: 150
   kickPowerMax: 750
   timeToChargeKick: 1
-  attackRange: 1
+  attackRange: 2
   slider: {fileID: 0}
 --- !u!1 &5928424666887342827
 GameObject:
