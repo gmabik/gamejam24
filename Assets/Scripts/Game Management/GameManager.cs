@@ -7,8 +7,11 @@ using System.Threading;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
+    public AudioClip clip;
+    
     public TMP_Text countText;
     
     private static GameManager Instance;
@@ -92,14 +95,18 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         int count = seconds;
-
+        AudioSource source = gameObject.GetComponent<AudioSource>();
         while (count > 0)
         {
             yield return new WaitForSecondsRealtime(1);
             count--;
+            source.PlayOneShot(clip);
             countText.text = count.ToString();
         }
+        
+        
         countText.text = "GO";
+        source.PlayOneShot(clip);
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
         Destroy(countText.gameObject);
