@@ -18,6 +18,9 @@ public class PlayerKick : MonoBehaviour
 
     [SerializeField] private bool isChargingKick;
     [SerializeField] private float currentChargeTime;
+    
+    public AudioSource audioSource;
+    public AudioClip clip;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) isChargingKick = true;
@@ -55,6 +58,8 @@ public class PlayerKick : MonoBehaviour
         float power = Mathf.Lerp(kickPowerMin, kickPowerMax, currentChargeTime / timeToChargeKick);
         print(power);
         ball.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up) * power);
+        
+        audioSource.PlayOneShot(clip);
     }
 
     private void UpdateUI()
