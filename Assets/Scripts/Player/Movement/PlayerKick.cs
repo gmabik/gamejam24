@@ -11,8 +11,10 @@ public class PlayerKick : MonoBehaviour
     [Space(10)]
     [SerializeField] private float attackRange;
 
-    [Space(10)] [SerializeField] private Slider slider;
-
+    [Space(10)] 
+    [SerializeField] private Slider slider;
+    [SerializeField] private Gradient _gradient;
+    [SerializeField] private Image _image;
 
     [SerializeField] private bool isChargingKick;
     [SerializeField] private float currentChargeTime;
@@ -58,5 +60,6 @@ public class PlayerKick : MonoBehaviour
     private void UpdateUI()
     {
         slider.value = currentChargeTime / timeToChargeKick;
+        _image.color = _gradient.Evaluate(slider.value);
     }
 }
