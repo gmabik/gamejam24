@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -288,6 +292,10 @@ PrefabInstance:
     - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_Name
       value: Bot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
@@ -484,6 +492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -675,6 +687,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1624392000 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1132692564, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+  m_PrefabInstance: {fileID: 2495417805522816288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1688236016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,6 +706,10 @@ PrefabInstance:
     - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_Name
       value: Bot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
@@ -809,6 +830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -871,6 +896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bot (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -924,10 +953,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1132692564, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2495417805220740212, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2495417805220740213, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1624392000}
     - target: {fileID: 2495417805220740218, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -984,6 +1021,10 @@ PrefabInstance:
     - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_Name
       value: Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417149546927844153, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5417149546927844157, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_RootOrder

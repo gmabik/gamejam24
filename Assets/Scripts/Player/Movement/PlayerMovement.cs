@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     [SerializeField] private bool isGrounded;
     [Space(10)]
-    [SerializeField] private Animator animator;
+    public Animator animator;
 
     private void Update()
     {

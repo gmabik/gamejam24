@@ -16,8 +16,8 @@ public class PlayerKick : MonoBehaviour
     [SerializeField] private Gradient _gradient;
     [SerializeField] private Image _image;
 
-    private bool isChargingKick;
-    private float currentChargeTime;
+    [SerializeField] private bool isChargingKick;
+    [SerializeField] private float currentChargeTime;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) isChargingKick = true;
@@ -28,8 +28,8 @@ public class PlayerKick : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             isChargingKick = false;
-            currentChargeTime = 0f;
             Kick();
+            currentChargeTime = 0f;
         }
         
         UpdateUI();
@@ -37,6 +37,8 @@ public class PlayerKick : MonoBehaviour
 
     private void Kick()
     {
+        gameObject.GetComponent<PlayerMovement>().animator.SetTrigger("Kick");
+
         GameObject ball = null;
 
         Collider[] colliders = Physics.OverlapBox(transform.position + transform.forward * attackRange, new Vector3(attackRange, attackRange, attackRange), transform.rotation);
@@ -51,8 +53,8 @@ public class PlayerKick : MonoBehaviour
         if (ball == null) return;
 
         float power = Mathf.Lerp(kickPowerMin, kickPowerMax, currentChargeTime / timeToChargeKick);
+        print(power);
         ball.GetComponent<Rigidbody>().AddForce((transform.forward + transform.up) * power);
-        currentChargeTime = 0f;
     }
 
     private void UpdateUI()
