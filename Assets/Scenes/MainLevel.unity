@@ -4829,16 +4829,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 173732055}
     - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.ctime0
+      value: 8288
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.ctime1
+      value: 30840
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: _gradient.key0.b
-      value: 0.054832935
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: _gradient.key0.g
-      value: 1
+      value: 0.028755568
       objectReference: {fileID: 0}
     - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: _gradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.key1.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.key1.g
+      value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.key1.r
+      value: 0.8750465
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.key2.r
+      value: 0.09708691
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: _gradient.m_NumColorKeys
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1132692564, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: m_Enabled
