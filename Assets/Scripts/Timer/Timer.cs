@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         timerIsRunning = true;
+        timeText = GetComponent<TMP_Text>();
     }
 
     private void Update()

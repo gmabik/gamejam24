@@ -108,5 +108,6 @@ public class AiScript : MonoBehaviour
         Vector3 position = Vector3.Lerp(Ball.transform.position, AllyGoal.GetComponent<Goal>().actualPos.position, CoefToDefend); // goes in between the ball and the goal
         position += new Vector3(Random.Range(-3f, 3f), 0f, Random.Range(-3f, 3f)); // adds a bit of randomness and helps with 2 defenders pushing each other
         agent.SetDestination(position);
+
     }
 }

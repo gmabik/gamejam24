@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Goal : MonoBehaviour
 {
     public GameManager.Team team;
@@ -14,8 +15,9 @@ public class Goal : MonoBehaviour
 
     private void Start()
     {
-        if (team == GameManager.Team.Team1) GameManager.GetInstance().team1Goal = gameObject;
-        else GameManager.GetInstance().team2Goal = gameObject;
+        audioSource = GetComponent<AudioSource>();
+        /*if (team == GameManager.Team.Team1) GameManager.GetInstance().team1Goal = gameObject;
+        else GameManager.GetInstance().team2Goal = gameObject;*/
     }
     
     private void OnTriggerEnter(Collider other)

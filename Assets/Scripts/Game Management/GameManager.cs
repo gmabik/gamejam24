@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainPlayer;
 
-    public bool heckIfTheSameTeam(GameObject instigator, GameObject otherObject)
+    public bool CheckIfTheSameTeam(GameObject instigator, GameObject otherObject)
         => (team1Players.Contains(instigator) && team1Players.Contains(otherObject)) || (team2Players.Contains(instigator) && team2Players.Contains(otherObject));
 
     public GameObject GetAllyGoal(GameObject instigator)
@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
         
         countText.text = "GO";
         source.PlayOneShot(clip2);
-        AudioSource source2 = gameObject.GetComponent<AudioSource>();
 
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
