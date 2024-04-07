@@ -26,6 +26,8 @@ public class Goal : MonoBehaviour
             else ScoreManager.GetInstance().team1Score++;
             
             audioSource.PlayOneShot(clip);
+
+            GameManager.GetInstance().Ball.GetComponent<BallScript>().ResetPos();
         }
     }
 }

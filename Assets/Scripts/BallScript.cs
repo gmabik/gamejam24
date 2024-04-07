@@ -7,6 +7,13 @@ public class BallScript : MonoBehaviour
     public bool isBeingKicked;
     [SerializeField] private float kickCooldown;
 
+    private Vector3 startPos;
+
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
     private void Update()
     {
         if(isBeingKicked) StartCoroutine(ResetKickFlag());
@@ -16,5 +23,10 @@ public class BallScript : MonoBehaviour
     {
         yield return new WaitForSeconds(kickCooldown);
         isBeingKicked = false;
+    }
+
+    public void ResetPos()
+    {
+        transform.position = startPos;
     }
 }

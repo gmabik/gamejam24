@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 56dc64c92fe75164fb24756caba606f6, type: 2}
 --- !u!1001 &3334738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3652,8 +3652,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 55.02169, y: 16.690514, z: 5.4578266}
-  m_Center: {x: 5.2461967, y: 4.254299, z: 0.8223095}
+  m_Size: {x: 55.02169, y: 16.690514, z: 7.7095165}
+  m_Center: {x: 5.2461967, y: 4.254299, z: 1.9481544}
 --- !u!23 &431937088
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3814,9 +3814,9 @@ MonoBehaviour:
   - {fileID: 336308020}
   - {fileID: 1328777419}
   - {fileID: 341171940}
-  team1Goal: {fileID: 0}
-  team2Goal: {fileID: 0}
-  mainPlayer: {fileID: 0}
+  team1Goal: {fileID: 266671886}
+  team2Goal: {fileID: 1176376001}
+  mainPlayer: {fileID: 296229709}
 --- !u!4 &485026968
 Transform:
   m_ObjectHideFlags: 0
@@ -6018,6 +6018,7 @@ GameObject:
   - component: {fileID: 838937390}
   - component: {fileID: 838937389}
   - component: {fileID: 838937388}
+  - component: {fileID: 838937391}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6091,6 +6092,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45.626, y: 0, z: 0}
+--- !u!114 &838937391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838937387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50065c54d7a6f742a5b015232305a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zOffset: -6
 --- !u!1 &840462048
 GameObject:
   m_ObjectHideFlags: 0
@@ -7315,8 +7329,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.234413, y: 22.823616, z: 58.900387}
-  m_Center: {x: -7.147442, y: 1.187748, z: 4.812296}
+  m_Size: {x: 30.427822, y: 22.823616, z: 58.900387}
+  m_Center: {x: -7.0507374, y: 1.187748, z: 4.812296}
 --- !u!23 &1044704159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8028,8 +8042,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 55.02169, y: 16.690514, z: 5.4578266}
-  m_Center: {x: 5.2461967, y: 4.254299, z: 0.8223095}
+  m_Size: {x: 55.02169, y: 16.690514, z: 6.3281927}
+  m_Center: {x: 5.2461967, y: 4.254299, z: 0.38712645}
 --- !u!23 &1200354314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9653,7 +9667,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1443259051
 BoxCollider:
@@ -11427,8 +11441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team1Score: 0
   team2Score: 0
-  _scoreText1: {fileID: 0}
-  _scoreText2: {fileID: 0}
+  _scoreText1: {fileID: 968397837}
+  _scoreText2: {fileID: 655611640}
 --- !u!4 &1762297368
 Transform:
   m_ObjectHideFlags: 0
@@ -13765,6 +13779,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450651604539487}
+  - component: {fileID: 919132147936625383}
+  - component: {fileID: 919132147936625382}
   m_Layer: 0
   m_Name: Football Goal rework
   m_TagString: Untagged
@@ -13772,6 +13788,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147936625382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147936625381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791a68943dc0eb34b8b82f5f8b18b616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  score: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  actualPos: {fileID: 1176376002}
+--- !u!65 &919132147936625383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147936625381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2281151, y: 1.693079, z: 2.1351535}
+  m_Center: {x: 9.29595, y: 0.34653935, z: 0.014986312}
 --- !u!1 &919132148741347561
 GameObject:
   m_ObjectHideFlags: 0
@@ -13781,6 +13827,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450652948218451}
+  - component: {fileID: 919132148741347563}
+  - component: {fileID: 919132148741347562}
   m_Layer: 0
   m_Name: Football Goal rework (1)
   m_TagString: Untagged
@@ -13788,6 +13836,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148741347562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148741347561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791a68943dc0eb34b8b82f5f8b18b616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  score: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  actualPos: {fileID: 266671887}
+--- !u!65 &919132148741347563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148741347561}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2281151, y: 1.693079, z: 2.1351535}
+  m_Center: {x: 9.29595, y: 0.34653935, z: 0.014986312}
 --- !u!23 &1305037034448111458
 MeshRenderer:
   m_ObjectHideFlags: 0
