@@ -682,6 +682,10 @@ PrefabInstance:
       propertyPath: CoefToDefend
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 999286105, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
+      propertyPath: distanceToBallToAttack
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1143151766237689644, guid: 23a9a9f819c8048408f6225639159b65, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4829,6 +4833,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 173732055}
     - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: attackRange
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7277146366540359790, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: _gradient.ctime0
       value: 8288
       objectReference: {fileID: 0}
@@ -4885,9 +4893,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2495417805220740213, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495417805220740213, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 507896048}
+    - target: {fileID: 2495417805220740213, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
+      propertyPath: jumpHeigh
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2495417805220740218, guid: 20b910387b915dc4d9d725f589be904b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -13728,7 +13744,7 @@ GameObject:
   - component: {fileID: 1443259053}
   - component: {fileID: 1443259052}
   - component: {fileID: 1443259051}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
